@@ -1,0 +1,19 @@
+{
+  "name": "@technocis/rustic-react",
+  "version": "0.0.0",
+  "description": "Rustic UI Components for React",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/technocis/rustic-react.git"
+  },
+  "author": "TechnoCIS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/technocis/rustic-react/issues"
+  },
+  "homepage": "https://github.com/technocis/rustic-react#readme"
+}
