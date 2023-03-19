@@ -1,11 +1,15 @@
 {
   "name": "@technocis/rustic-react",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Rustic UI Components for React",
-  "main": "index.js",
   "scripts": {
     "test": "jest",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build": "npm run rollup && npm run pack",
+    "rollup": "rollup --config rollup.config.ts --configPlugin typescript",
+    "pack": "npm pack --pack-destination",
+    "storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
+    "build-storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider build-storybook -o ./docs"
   },
   "repository": {
     "type": "git",
@@ -18,8 +22,38 @@
   },
   "homepage": "https://github.com/technocis/rustic-react#readme",
   "devDependencies": {
+    "@babel/core": "^7.21.3",
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
-    "husky": "^8.0.3"
-  }
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-interactions": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/builder-webpack4": "^6.5.16",
+    "@storybook/manager-webpack4": "^6.5.16",
+    "@storybook/react": "^6.5.16",
+    "@storybook/testing-library": "^0.0.13",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "autoprefixer": "^10.4.14",
+    "babel-loader": "^8.3.0",
+    "cross-env": "^7.0.3",
+    "husky": "^8.0.3",
+    "postcss": "^8.4.21",
+    "prettier-plugin-organize-imports": "^3.2.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^3.19.1",
+    "tailwindcss": "^3.2.7",
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.2"
+  },
+  "overrides": {
+    "@storybook/react-docgen-typescript-plugin": "1.0.6--canary.9.cd77847.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts"
 }

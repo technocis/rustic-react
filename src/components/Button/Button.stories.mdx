@@ -1,0 +1,143 @@
+import { Canvas, Meta, Story, ArgsTable } from "@storybook/addon-docs";
+
+import { Button, ButtonProps } from "./Button";
+
+<Meta
+  title="Button"
+  component={Button}
+  argTypes={{
+    color: {
+      type: { name: "string", required: false },
+      defaultValue: "primary",
+      description: "Color of the button",
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: "primary" },
+      },
+      options: ["primary", "outline", "light", "danger"],
+      control: {
+        type: "select",
+      },
+    },
+    loading: {
+      type: { name: "boolean", required: false },
+      defaultValue: false,
+      description: "Loading State Toggle",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
+      options: ["primary", "outline", "light", "danger"],
+      control: {
+        type: "boolean",
+      },
+    },
+  }}
+/>
+
+export const Template = (args) => <Button {...args}>{args.children}</Button>;
+
+# Button
+
+This is the `RusticUI` Button Component. It supports all the HTML button attributes and some extra.
+
+<Canvas>
+  <Story
+    name="Primary"
+    args={{
+      color: "primary",
+      children: "Primary",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Other Variants
+
+These are the other available variants of the `RusticUI` Button Component
+
+<Canvas>
+  <Story
+    name="Outline"
+    args={{
+      color: "outline",
+      children: "Outline",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Light"
+    args={{
+      color: "light",
+      children: "Light",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Danger"
+    args={{
+      color: "danger",
+      children: "Danger",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Loading State
+
+This is the button when it is loading. It replaces all children with a Loading Animation and the text **Please Wait**
+
+<Canvas>
+  <Story
+    name="Loading"
+    args={{
+      color: "primary",
+      loading: true,
+      children: "Loading",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Disabled State
+
+This is the button when it is disabled. It applies for all color variants and the color becomes faded when disabled
+
+<Canvas>
+  <Story
+    name="Disabled Primary"
+    args={{
+      color: "primary",
+      disabled: true,
+      children: "Disabled State",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Bind AccessKey Shortcut
+
+This is the button which is bound to a keyboard shortcut. The Combination differs with each browser. More infor can be found at [MDN - Accesskey](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey)
+
+<Canvas>
+  <Story
+    name="Accesskey Binding"
+    args={{
+      color: "primary",
+      accessKey: "p",
+      children: "Shortcut Bound",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Props List
+
+<ArgsTable of={Button} />

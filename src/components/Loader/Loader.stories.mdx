@@ -1,0 +1,79 @@
+import { Canvas, Meta, Story, ArgsTable } from "@storybook/addon-docs";
+
+import { Loader } from "./Loader";
+
+<Meta
+  title="Loader"
+  component={Loader}
+  argTypes={{
+    color: {
+      name: "Color",
+      type: { name: "string", required: false },
+      defaultValue: "purple-500",
+      description:
+        "Color of the button. Follows TailwindCSS color pallette. Can be extended by tailwind.config.js",
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: "purple-500" },
+      },
+      control: {
+        type: "text",
+      },
+    },
+    size: {
+      name: "Size",
+      type: { name: "number", required: false },
+      defaultValue: "40",
+      description: "Size of the Loader in pixels",
+      table: {
+        type: { summary: "number" },
+        defaultValue: { summary: "40" },
+      },
+      control: {
+        type: "number",
+      },
+    },
+  }}
+/>
+
+export const Template = (args) => <Loader {...args} />;
+
+# Loader
+
+This is the `RusticUI` Loader Component.
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+</Canvas>
+
+### With Text
+
+<Canvas>
+  <Story
+    name="Load with Text"
+    args={{
+      text: "Loading Items",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Multiple Sizes
+
+The sizes are in pixels
+
+<Canvas>
+  <Story
+    name="Different Sizest"
+    args={{
+      size: 80,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Props List
+
+<ArgsTable of={Loader} />
