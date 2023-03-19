@@ -1,0 +1,94 @@
+import { Canvas, Meta, Story, ArgsTable } from "@storybook/addon-docs";
+
+import {
+  Input,
+  InputProps,
+  TextArea,
+  TextAreaProps,
+  TagInput,
+  TagInputProps,
+} from "./Input";
+
+<Meta title="Inputs" component={Input} argTypes={{}} />
+
+export const Template = (args) => <Input {...args}>{args.children}</Input>;
+export const TemplateTextArea = (args) => (
+  <TextArea {...args}>{args.children}</TextArea>
+);
+export const TemplateTagInput = (args) => (
+  <TagInput {...args}>{args.children}</TagInput>
+);
+
+# Inputs
+
+These are the User input components, that are extensions of the respective HTML Elements.
+If you see below, none of the props are mandatory.
+
+## Input
+
+This is the `RusticUI` Input Component. It supports all the HTML Input Element attributes and some extra.
+
+<Canvas>
+  <Story
+    name="Input"
+    args={{
+      label: "Full Name",
+      hint: "Please Enter your Full name",
+      placeholder: "John Doe",
+      required: true,
+      error: "Name is Required",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Props List
+
+<ArgsTable of={Input} />
+
+## Text Area
+
+This is the `RusticUI` Text Area Component. It supports all the HTML Text Area Element attributes and some extra.
+
+<Canvas>
+  <Story
+    name="Text Area"
+    args={{
+      label: "Some Description",
+      hint: "Please write your Description",
+      placeholder: "Start writing here...",
+      required: true,
+      error: "Description is Required",
+    }}
+  >
+    {TemplateTextArea.bind({})}
+  </Story>
+</Canvas>
+
+### Props List
+
+<ArgsTable of={TextArea} />
+
+## Tag Input
+
+This is the `RusticUI` Tag Input Component.
+
+<Canvas>
+  <Story
+    name="Tag Input"
+    args={{
+      label: "Blog Tags",
+      hint: "Enter values, separated by comma",
+      placeholder: "test,food,football",
+      required: true,
+      error: "Atleast 1 Tag Required",
+    }}
+  >
+    {TemplateTagInput.bind({})}
+  </Story>
+</Canvas>
+
+### Props List
+
+<ArgsTable of={TagInput} />

@@ -1,0 +1,4 @@
+.card {
+  max-width: min(calc(100% - 2rem), 1200px);
+  margin-inline: auto;
+}

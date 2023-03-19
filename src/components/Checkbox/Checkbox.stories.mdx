@@ -1,0 +1,59 @@
+import { Canvas, Meta, Story, ArgsTable } from "@storybook/addon-docs";
+
+import { Checkbox, CheckboxProps } from "./Checkbox";
+
+<Meta
+  title="Checkbox"
+  component={Checkbox}
+  argTypes={{
+    text: {
+      type: { name: "string", required: false },
+      defaultValue: "Check Me",
+      description: "Text Beside the Checkbox",
+      table: {
+        type: { summary: "string" },
+      },
+      control: {
+        type: "input",
+      },
+    },
+    showLabel: {
+      type: { name: "boolean", required: false },
+      defaultValue: true,
+      description: "Show Label for the Checkbox",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
+      options: ["primary", "outline", "light", "danger"],
+      control: {
+        type: "boolean",
+      },
+    },
+  }}
+/>
+
+export const Template = (args) => (
+  <Checkbox {...args}>{args.children}</Checkbox>
+);
+
+# Checkbox
+
+This is the `RusticUI` Checkbox Component. It supports all the HTML Checkbox Input attributes and some extra.
+
+<Canvas>
+  <Story
+    name="Checkbox"
+    args={{
+      label: "Example Checkbox",
+      text: "I Agree to check this box",
+      hint: "Checking this means you agree to checking it",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Props List
+
+<ArgsTable of={Checkbox} />

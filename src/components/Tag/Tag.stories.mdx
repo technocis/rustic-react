@@ -1,0 +1,36 @@
+import { Canvas, Meta, Story, ArgsTable } from "@storybook/addon-docs";
+
+import { Tag, Badge } from "./Tag";
+
+<Meta title="Tags" component={Tag} />
+
+export const Template = (args) => <Tag {...args}>{args.children}</Tag>;
+export const TemplateBadge = (args) => <Badge {...args}>{args.children}</Badge>;
+
+# Tag or Badge
+
+This is the `RusticUI` Tag Component. It is fairly simple. You just wrap whatever content you want inside of `<Tag>` and `</Tag>`.
+
+<Canvas>
+  <Story
+    name="Tag"
+    args={{
+      children: "Hello",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+If you prefer, `<Badge>` and `</Badge>` also works
+
+<Canvas>
+  <Story
+    name="Badge"
+    args={{
+      children: "I am a Tag but called Badge",
+    }}
+  >
+    {TemplateBadge.bind({})}
+  </Story>
+</Canvas>
