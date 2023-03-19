@@ -1,10 +1,11 @@
 {
   "name": "@technocis/rustic-react",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Rustic UI Components for React",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/technocis/rustic-react/issues"
   },
-  "homepage": "https://github.com/technocis/rustic-react#readme"
+  "homepage": "https://github.com/technocis/rustic-react#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "husky": "^8.0.3"
+  }
 }
