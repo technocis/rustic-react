@@ -1,6 +1,6 @@
 {
   "name": "@technocis/rustic-react",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Rustic UI Components for React",
   "scripts": {
     "test": "jest",
