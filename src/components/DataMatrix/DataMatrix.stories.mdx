@@ -1,0 +1,50 @@
+# DataMatrix
+
+This is the `RusticUI` DataMatrix Component. It is fairly simple. You just wrap whatever content you want inside of `<DataMatrix>` and `</DataMatrix>`.
+
+import { Canvas, Meta, Story, ArgsTable } from "@storybook/addon-docs";
+import { DataMatrix } from "./DataMatrix";
+
+<Meta
+  title="Data Matrix"
+  component={DataMatrix}
+  argTypes={{
+    text: {
+      type: { name: "string", required: true },
+      defaultValue: "Rustic Ui for React",
+      description: "Text to generate the DataMatrix",
+      table: {
+        type: { summary: "string" },
+      },
+      control: {
+        type: "input",
+      },
+    },
+    size: {
+      type: { name: "number", required: false },
+      defaultValue: 20,
+      description: "Size if the data matrix",
+      table: {
+        type: { summary: "number" },
+        defaultValue: { summary: "20" },
+      },
+      control: {
+        type: "input",
+      },
+    },
+  }}
+/>
+
+export const Template = (args) => <DataMatrix {...args}></DataMatrix>;
+
+<Canvas>
+  <Story
+    name="Data Matrix"
+    args={{
+      data: "Rustic Ui for React",
+      size: 20,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
